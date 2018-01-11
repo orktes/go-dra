@@ -57,7 +57,6 @@ func (dra *DRA) Close() error {
 }
 
 func (dra *DRA) Send(cmd ...string) error {
-	println(strings.Join(cmd, ""))
 	w := bufio.NewWriter(dra.conn)
 	for _, p := range cmd {
 		w.Write([]byte(p))
